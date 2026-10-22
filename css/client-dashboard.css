@@ -1,0 +1,161 @@
+/* ==========================================================================
+   DIAGNOSTIC LABORATORY - CLIENT DASHBOARD SPECIFIC STYLES (client-dashboard.css)
+   ========================================================================== */
+
+.client-welcome-card {
+  background: linear-gradient(135deg, var(--primary-navy) 0%, #174871 100%);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  color: #FFFFFF;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.client-welcome-card::after {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(32, 184, 166, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.welcome-text h2 {
+  color: #FFFFFF;
+  font-size: 1.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.welcome-text p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  margin: 0;
+  max-width: 520px;
+}
+
+.client-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.rec-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.rec-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.rec-card p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+.profile-avatar-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  text-align: center;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.profile-large-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: var(--teal-accent);
+  color: #FFFFFF;
+  font-size: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem auto;
+  border: 4px solid var(--surface-bg);
+  box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 1024px) {
+  .client-kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  .recommendations-grid {
+    grid-template-columns: 1fr;
+  }
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .client-welcome-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+  .client-kpi-grid {
+    grid-template-columns: 1fr;
+  }
+  .report-meta-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .profile-avatar-card {
+    padding: 1.5rem 1rem;
+  }
+  .profile-large-avatar {
+    width: 72px;
+    height: 72px;
+    font-size: 1.5rem;
+  }
+  .report-header-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .profile-avatar-card {
+    padding: 1.25rem 0.75rem;
+  }
+  .profile-large-avatar {
+    width: 60px;
+    height: 60px;
+    font-size: 1.3rem;
+  }
+}

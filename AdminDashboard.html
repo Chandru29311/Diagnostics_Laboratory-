@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard — Laboratory Management System | Apex Diagnostics</title>
+  <meta name="description" content="Laboratory administrative management interface for tracking specimen intake, appointments, test catalogue, and simulated clinical reports.">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- AOS (Animate On Scroll) & Animate.css via CDNJS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/admin-dashboard.css">
+</head>
+<body class="dashboard-body">
+
+  <div class="dashboard-layout">
+    <!-- Admin Sidebar Navigation -->
+    <aside class="dash-sidebar" aria-label="Admin Navigation">
+      <div>
+        <div class="sidebar-header">
+          <a href="index.html" class="sidebar-brand">
+            <img src="assets/logo_0013.webp" alt="Stackly" class="sidebar-logo-img">
+          </a>
+        </div>
+
+        <nav class="sidebar-nav">
+          <button type="button" class="sidebar-link active" data-tab="tabAdminDashboard">
+            <i class="fa-solid fa-chart-pie"></i> <span>Dashboard</span>
+          </button>
+          <button type="button" class="sidebar-link" data-tab="tabAdminAppointments">
+            <i class="fa-regular fa-calendar-check"></i> <span>Appointments</span>
+          </button>
+          <button type="button" class="sidebar-link" data-tab="tabAdminTests">
+            <i class="fa-solid fa-vial"></i> <span>Diagnostic Tests</span>
+          </button>
+          <button type="button" class="sidebar-link" data-tab="tabAdminPatients">
+            <i class="fa-solid fa-users"></i> <span>Patients</span>
+          </button>
+          <button type="button" class="sidebar-link" data-tab="tabAdminReports">
+            <i class="fa-regular fa-file-lines"></i> <span>Reports</span>
+          </button>
+          <button type="button" class="sidebar-link" data-tab="tabAdminNotifs">
+            <i class="fa-regular fa-bell"></i> <span>Notifications</span>
+            <span class="sidebar-badge-count" id="notifBadgeSidebar">3</span>
+          </button>
+          <button type="button" class="sidebar-link" data-tab="tabAdminSettings">
+            <i class="fa-solid fa-sliders"></i> <span>Settings</span>
+          </button>
+        </nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-user">
+          <div class="sidebar-user-avatar dash-user-avatar">AD</div>
+          <div class="sidebar-user-info">
+            <div class="sidebar-user-name dash-user-name">Admin</div>
+            <div class="sidebar-user-email dash-user-email">admin@stackly.com</div>
+            <div class="sidebar-user-role dash-user-role">Administrator</div>
+          </div>
+        </div>
+        <a href="login.html" type="button" class="btn-sidebar-logout" onclick="">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout Session
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="dash-main">
+      <!-- Topbar -->
+      <header class="dash-topbar">
+        <div class="dash-topbar-left">
+          <button type="button" class="dash-mobile-toggle" aria-label="Toggle navigation drawer">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <h1 class="dash-topbar-title">Laboratory Management Overview</h1>
+        </div>
+
+        <div class="dash-topbar-right">
+          <div class="dash-search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search reference, patient..." onkeyup="if(event.key==='Enter'){switchDashTab('tabAdminAppointments');}">
+          </div>
+
+          <div class="dash-date-badge" id="dashCurrentDate">
+            <!-- Populated by JS -->
+          </div>
+
+          <button type="button" class="dash-notif-btn" onclick="switchDashTab('tabAdminNotifs')" aria-label="View notifications">
+            <i class="fa-regular fa-bell"></i>
+            <span class="notif-bubble" id="notifBubbleCount">3</span>
+          </button>
+
+          <a href="index.html" class="btn btn-outline btn-sm" title="Back to Public Site" style="padding:0.4rem 0.85rem; font-size:0.78rem;">
+            <i class="fa-solid fa-globe"></i> Lab Site
+          </a>
+        </div>
+      </header>
+
+      <!-- Dashboard Panes Container -->
+      <div class="dash-content">
+        
+        <!-- Clinical Demo Disclaimer Pill -->
+        <div style="background:var(--teal-accent-light); border:1px solid rgba(32,184,166,0.3); border-radius:var(--radius-md); padding:0.65rem 1.25rem; margin-bottom:1.75rem; font-size:0.8rem; color:var(--primary-navy); display:flex; align-items:center; justify-content:space-between;">
+          <span>
+            <i class="fa-solid fa-circle-info" style="color:var(--teal-accent); margin-right:0.4rem;"></i>
+            <strong>Frontend Demonstration Mode:</strong> All appointments, patient lists, and test records are managed in local browser memory.
+          </span>
+          <span class="badge badge-confirmed">Interactive Demo</span>
+        </div>
+
+        <!-- ==================================================================
+             TAB 1: DASHBOARD OVERVIEW
+             ================================================================== -->
+        <div class="dash-tab-pane active" id="tabAdminDashboard">
+          
+          <!-- Welcome Banner -->
+          <div class="client-welcome-card" data-aos="fade-down" style="margin-bottom: 2rem;">
+            <div class="welcome-text">
+              <h2>Welcome to Administration Portal, <span class="dash-user-name">Admin</span></h2>
+              <p>Stackly Diagnostic Laboratory Command & Operations Management Portal.</p>
+            </div>
+            <button type="button" class="btn btn-outline-white" onclick="switchDashTab('tabAdminAppointments')">
+              <i class="fa-regular fa-calendar-check"></i> View Appointments
+            </button>
+          </div>
+          
+          <!-- KPI Cards -->
+          <div class="kpi-grid">
+            <div class="kpi-card" data-aos="fade-up-card" data-aos-delay="100">
+              <div>
+                <div class="kpi-title">Total Appointments</div>
+                <div class="kpi-value" id="kpiTotalAppts">0</div>
+                <div class="kpi-trend"><i class="fa-solid fa-arrow-trend-up"></i> +12% this month</div>
+              </div>
+              <div class="kpi-icon-wrap"><i class="fa-solid fa-calendar-check"></i></div>
+            </div>
+
+            <div class="kpi-card" data-aos="fade-up-card" data-aos-delay="200">
+              <div>
+                <div class="kpi-title">Pending Appointments</div>
+                <div class="kpi-value" id="kpiPendingAppts" style="color:#F59E0B;">0</div>
+                <div class="kpi-trend" style="color:#F59E0B;"><i class="fa-solid fa-clock"></i> Requires review</div>
+              </div>
+              <div class="kpi-icon-wrap" style="color:#F59E0B;"><i class="fa-solid fa-hourglass-half"></i></div>
+            </div>
+
+            <div class="kpi-card" data-aos="fade-up-card" data-aos-delay="300">
+              <div>
+                <div class="kpi-title">Available Tests</div>
+                <div class="kpi-value" id="kpiAvailableTests">0</div>
+                <div class="kpi-trend"><i class="fa-solid fa-vial"></i> Active catalogue</div>
+              </div>
+              <div class="kpi-icon-wrap"><i class="fa-solid fa-flask-vial"></i></div>
+            </div>
+
+            <div class="kpi-card" data-aos="fade-up-card" data-aos-delay="400">
+              <div>
+                <div class="kpi-title">Reports Ready</div>
+                <div class="kpi-value" id="kpiReportsReady" style="color:#10B981;">0</div>
+                <div class="kpi-trend" style="color:#10B981;"><i class="fa-solid fa-check"></i> Ready for patients</div>
+              </div>
+              <div class="kpi-icon-wrap" style="color:#10B981;"><i class="fa-solid fa-file-circle-check"></i></div>
+            </div>
+          </div>
+
+          <!-- Analytics SVG Charts Grid -->
+          <div class="admin-chart-grid">
+            <!-- Line Chart: Appointments Over Time -->
+            <div class="chart-card-half">
+              <div class="chart-header">
+                <div>
+                  <h4 style="font-size:1.1rem; color:var(--primary-navy); margin-bottom:0.2rem;">Appointments Over Time</h4>
+                  <p style="font-size:0.78rem; color:var(--text-secondary); margin:0;">Specimen accessioning trajectory</p>
+                </div>
+                <div class="period-pill-group">
+                  <button type="button" class="period-pill" data-period="7d">7 Days</button>
+                  <button type="button" class="period-pill active" data-period="30d">30 Days</button>
+                  <button type="button" class="period-pill" data-period="3m">3 Months</button>
+                  <button type="button" class="period-pill" data-period="1y">1 Year</button>
+                </div>
+              </div>
+              <div class="chart-svg-box" id="appointmentsTrendChart">
+                <!-- SVG dynamically injected -->
+              </div>
+            </div>
+
+            <!-- Bar Chart: Popular Diagnostic Tests -->
+            <div class="chart-card-half">
+              <div class="chart-header">
+                <div>
+                  <h4 style="font-size:1.1rem; color:var(--primary-navy); margin-bottom:0.2rem;">High-Volume Investigations</h4>
+                  <p style="font-size:0.78rem; color:var(--text-secondary); margin:0;">Top tests requested this period</p>
+                </div>
+              </div>
+              <div class="chart-svg-box" id="popularTestsBarChart">
+                <!-- SVG dynamically injected -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Action Table Preview -->
+          <div class="table-card">
+            <div class="table-header">
+              <div class="table-title-group">
+                <h3>Recent Appointments</h3>
+                <p>Showing latest patient bookings</p>
+              </div>
+              <button type="button" class="btn btn-outline btn-sm" onclick="switchDashTab('tabAdminAppointments')">
+                View All Appointments <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+            <div class="table-responsive">
+              <table class="clinical-table">
+                <thead>
+                  <tr>
+                    <th>Ref Code</th>
+                    <th>Patient Name</th>
+                    <th>Test / Package</th>
+                    <th>Schedule</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="adminQuickApptsTableBody">
+                  <!-- Populated via loadAppointmentsTable() -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ==================================================================
+             TAB 2: APPOINTMENTS FULL MANAGEMENT
+             ================================================================== -->
+        <div class="dash-tab-pane" id="tabAdminAppointments">
+          <div class="table-card">
+            <div class="table-header">
+              <div class="table-title-group">
+                <h3>Appointment Records</h3>
+                <p>Review, confirm, and update patient laboratory bookings</p>
+              </div>
+              <div class="table-actions">
+                <input type="text" id="apptSearchInput" class="form-control" style="width:220px; padding:0.45rem 0.85rem; font-size:0.85rem;" placeholder="Search patient, ID...">
+                <select id="apptStatusFilter" class="filter-select">
+                  <option value="all">All Statuses</option>
+                  <option value="Pending">Pending</option>
+                  <option value="Confirmed">Confirmed</option>
+                  <option value="Completed">Completed</option>
+                  <option value="Cancelled">Cancelled</option>
+                </select>
+                <button type="button" class="btn btn-outline btn-sm" onclick="loadAppointmentsTable()" title="Refresh List">
+                  <i class="fa-solid fa-rotate"></i>
+                </button>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="clinical-table">
+                <thead>
+                  <tr>
+                    <th>Reference</th>
+                    <th>Patient Details</th>
+                    <th>Diagnostic Test</th>
+                    <th>Date & Time</th>
+                    <th>Status</th>
+                    <th>Management Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="adminApptsTableBody">
+                  <!-- Injected by js/admin-dashboard.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================================================================
+             TAB 3: DIAGNOSTIC TESTS CATALOGUE (CRUD)
+             ================================================================== -->
+        <div class="dash-tab-pane" id="tabAdminTests">
+          <div class="table-card">
+            <div class="table-header">
+              <div class="table-title-group">
+                <h3>Diagnostic Tests Directory Management</h3>
+                <p>Configure test profiles, specimen types, and indicative pricing</p>
+              </div>
+              <div class="table-actions">
+                <input type="text" id="testsTableSearch" class="form-control" style="width:200px; padding:0.45rem 0.85rem; font-size:0.85rem;" placeholder="Search tests...">
+                <button type="button" class="btn btn-teal btn-sm" onclick="openAddTestModal()">
+                  <i class="fa-solid fa-plus"></i> Add New Test
+                </button>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="clinical-table">
+                <thead>
+                  <tr>
+                    <th>Test ID</th>
+                    <th>Test Name</th>
+                    <th>Department</th>
+                    <th>Specimen</th>
+                    <th>Demo Price</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="adminTestsTableBody">
+                  <!-- Populated via loadTestsCRUDTable() -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================================================================
+             TAB 4: PATIENTS MANAGEMENT
+             ================================================================== -->
+        <div class="dash-tab-pane" id="tabAdminPatients">
+          <div class="table-card">
+            <div class="table-header">
+              <div class="table-title-group">
+                <h3>Registered Demo Patients</h3>
+                <p>Fictional patient profiles registered in local browser storage</p>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="clinical-table">
+                <thead>
+                  <tr>
+                    <th>Patient ID</th>
+                    <th>Full Name</th>
+                    <th>Contact Info</th>
+                    <th>Appointments</th>
+                    <th>Last Visit</th>
+                    <th>Profile Action</th>
+                  </tr>
+                </thead>
+                <tbody id="adminPatientsTableBody">
+                  <!-- Populated via loadPatientsTable() -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================================================================
+             TAB 5: REPORTS MANAGEMENT
+             ================================================================== -->
+        <div class="dash-tab-pane" id="tabAdminReports">
+          <div class="table-card">
+            <div class="table-header">
+              <div class="table-title-group">
+                <h3>Simulated Clinical Reports</h3>
+                <p>Track test processing, review findings, and issue reports</p>
+              </div>
+              <span class="badge badge-cancelled"><i class="fa-solid fa-triangle-exclamation"></i> Demo Reports Only</span>
+            </div>
+            <div class="table-responsive">
+              <table class="clinical-table">
+                <thead>
+                  <tr>
+                    <th>Report ID</th>
+                    <th>Patient Name</th>
+                    <th>Diagnostic Test</th>
+                    <th>Date Generated</th>
+                    <th>Review Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="adminReportsTableBody">
+                  <!-- Populated via loadReportsTable() -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================================================================
+             TAB 6: NOTIFICATIONS
+             ================================================================== -->
+        <div class="dash-tab-pane" id="tabAdminNotifs">
+          <div class="table-card">
+            <div class="table-header">
+              <div class="table-title-group">
+                <h3>System & Activity Notifications</h3>
+                <p>Real-time intake alerts, appointment bookings, and report status notifications</p>
+              </div>
+              <div class="table-actions">
+                <button type="button" class="btn btn-outline btn-sm" onclick="markAllNotifsRead()">
+                  <i class="fa-solid fa-check"></i> Mark All as Read
+                </button>
+                <button type="button" class="btn btn-outline btn-sm" onclick="loadNotificationsList()">
+                  <i class="fa-solid fa-rotate"></i> Refresh
+                </button>
+              </div>
+            </div>
+            <div style="padding:1.5rem;" id="adminNotifsContainer">
+              <!-- Populated via loadNotificationsList() -->
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================================================================
+             TAB 7: SETTINGS
+             ================================================================== -->
+        <div class="dash-tab-pane" id="tabAdminSettings">
+          <div class="settings-card-grid">
+            <div class="contact-form-card">
+              <h4 style="font-size:1.2rem; color:var(--primary-navy); margin-bottom:0.5rem;">Laboratory Display Configuration</h4>
+              <p style="font-size:0.8rem; margin-bottom:1.5rem;">Demo preferences saved to browser storage</p>
+
+              <form id="adminSettingsForm">
+                <div class="form-group">
+                  <label class="form-label">Laboratory Official Title</label>
+                  <input type="text" class="form-control" value="Apex Diagnostics Central Facility">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Accessioning Hotline</label>
+                  <input type="text" class="form-control" value="+91 9876543210">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Official Support Email</label>
+                  <input type="email" class="form-control" value="info@stackly.com">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Facility Address</label>
+                  <input type="text" class="form-control" value="MMR Complex, Chinna Thirupathi, near Chinna Muniyappan Kovil, Salem, Tamil Nadu 636008">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Default Turnaround SLA</label>
+                  <select class="form-control">
+                    <option value="Same Day">Same Day (4 to 6 Hours)</option>
+                    <option value="24 Hours" selected>24 Hours Standard</option>
+                    <option value="48 Hours">48 Hours Comprehensive</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-teal btn-sm">
+                  <i class="fa-solid fa-floppy-disk"></i> Save Preferences
+                </button>
+              </form>
+            </div>
+
+            <div class="contact-form-card">
+              <h4 style="font-size:1.2rem; color:var(--primary-navy); margin-bottom:0.5rem;">Security & Storage Diagnostics</h4>
+              <p style="font-size:0.8rem; margin-bottom:1.5rem;">Manage client-side demo state</p>
+
+              <div style="background:var(--surface-bg); border-radius:var(--radius-md); padding:1rem; margin-bottom:1.5rem; font-size:0.825rem; color:var(--text-secondary);">
+                <p><strong>Storage Engine:</strong> HTML5 localStorage</p>
+                <p><strong>Current Active Role:</strong> Administrator</p>
+                <p style="margin:0;"><strong>Security Note:</strong> Client-side storage is utilized for frontend interface demonstration. No actual patient data is compromised.</p>
+              </div>
+
+              <button type="button" class="btn btn-outline btn-sm" onclick="showConfirmDialog('Reset Demo Data', 'Restore factory demo appointments and tests?', () => { localStorage.clear(); location.reload(); })">
+                <i class="fa-solid fa-trash-can"></i> Reset Demo Data to Factory Defaults
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Test CRUD Modal (Add/Edit) -->
+  <div class="modal-overlay" id="testCRUDModal" aria-hidden="true">
+    <div class="modal-container" role="dialog" style="max-width:650px;">
+      <div class="modal-header">
+        <h3 class="modal-title" id="testModalTitle" style="font-size:1.35rem;">Add New Diagnostic Test</h3>
+        <button type="button" class="modal-close-btn" data-close-modal="testCRUDModal">&times;</button>
+      </div>
+      <form id="testCRUDForm" class="modal-body" novalidate>
+        <input type="hidden" id="testModalIsEdit" value="false">
+
+        <div class="form-group-row" style="margin-bottom:1rem;">
+          <div>
+            <label class="form-label">Test ID *</label>
+            <input type="text" id="testFormId" class="form-control" placeholder="T115" required>
+          </div>
+          <div>
+            <label class="form-label">Test Name *</label>
+            <input type="text" id="testFormName" class="form-control" placeholder="e.g. Ferritin Serum Assay" required>
+          </div>
+        </div>
+
+        <div class="form-group-row" style="margin-bottom:1rem;">
+          <div>
+            <label class="form-label">Department / Category *</label>
+            <select id="testFormCategory" class="form-control" required>
+              <option value="Blood Tests">Blood Tests (Hematology)</option>
+              <option value="Biochemistry">Biochemistry</option>
+              <option value="Clinical Pathology">Clinical Pathology</option>
+              <option value="Hormone Testing">Hormone Testing</option>
+              <option value="Microbiology">Microbiology</option>
+              <option value="Molecular Diagnostics">Molecular Diagnostics</option>
+              <option value="Allergy Testing">Allergy Testing</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label">Specimen Sample *</label>
+            <input type="text" id="testFormSample" class="form-control" placeholder="Blood Serum / EDTA" required>
+          </div>
+        </div>
+
+        <div class="form-group-row" style="margin-bottom:1rem;">
+          <div>
+            <label class="form-label">Indicative Demo Price ($) *</label>
+            <input type="number" step="0.50" id="testFormPrice" class="form-control" placeholder="35.00" required>
+          </div>
+          <div>
+            <label class="form-label">Estimated Turnaround</label>
+            <input type="text" id="testFormTat" class="form-control" placeholder="Same Day (4 Hours)">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Patient Preparation Instructions</label>
+          <input type="text" id="testFormPrep" class="form-control" placeholder="e.g. Fasting 8 hours required.">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Clinical Purpose & Description</label>
+          <textarea id="testFormDesc" rows="3" class="form-control" placeholder="Detailed description of clinical significance..."></textarea>
+        </div>
+
+        <div class="modal-footer" style="padding:1rem 0 0 0; background:none;">
+          <button type="button" class="btn btn-outline btn-sm" data-close-modal="testCRUDModal">Cancel</button>
+          <button type="submit" class="btn btn-teal btn-sm">
+            <i class="fa-solid fa-check"></i> Save Test Record
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- AOS Animation Library via CDNJS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/admin-dashboard.js"></script>
+  <script>
+    // Link quick appts table to full load
+    document.addEventListener('DOMContentLoaded', () => {
+      const quickTableBody = document.getElementById('adminQuickApptsTableBody');
+      if (quickTableBody) {
+        const appointments = JSON.parse(localStorage.getItem('apex_appointments') || '[]');
+        quickTableBody.innerHTML = appointments.slice(0, 4).map(a => `
+          <tr>
+            <td><strong>${a.id}</strong></td>
+            <td>${a.patientName}</td>
+            <td>${a.testName}</td>
+            <td>${a.date} (${a.time})</td>
+            <td><span class="badge ${a.status==='Confirmed'?'badge-confirmed':a.status==='Pending'?'badge-pending':'badge-completed'}">${a.status}</span></td>
+            <td>
+              <button type="button" class="btn btn-outline btn-sm" onclick="switchDashTab('tabAdminAppointments')">Manage</button>
+            </td>
+          </tr>
+        `).join('');
+      }
+    });
+  </script>
+</body>
+</html>

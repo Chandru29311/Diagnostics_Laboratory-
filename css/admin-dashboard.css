@@ -1,0 +1,106 @@
+/* ==========================================================================
+   DIAGNOSTIC LABORATORY - ADMIN DASHBOARD SPECIFIC STYLES (admin-dashboard.css)
+   ========================================================================== */
+
+.admin-chart-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.chart-card-half {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.chart-svg-box {
+  width: 100%;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notif-list-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.notif-card-item {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  transition: all var(--transition-fast);
+}
+
+.notif-card-item.unread {
+  border-left: 4px solid var(--teal-accent);
+  background: #FAFDFD;
+}
+
+.notif-card-item:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+.notif-type-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--surface-bg);
+  color: var(--teal-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.settings-card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .admin-chart-grid {
+    grid-template-columns: 1fr;
+  }
+  .settings-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .admin-chart-card {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .admin-chart-card {
+    padding: 1.25rem 0.85rem;
+  }
+  .chart-period-btn {
+    padding: 0.35rem 0.55rem;
+    font-size: 0.72rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .admin-chart-card {
+    padding: 1rem 0.65rem;
+  }
+  .chart-period-btn {
+    padding: 0.3rem 0.45rem;
+    font-size: 0.68rem;
+  }
+}

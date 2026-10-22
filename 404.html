@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Specimen Not Located | Apex Diagnostic Laboratory</title>
+  <meta name="description" content="The requested clinical laboratory page or diagnostic specimen record could not be found.">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- AOS (Animate On Scroll) & Animate.css via CDNJS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/error.css">
+</head>
+<body class="error-page">
+
+  <!-- Floating Background Ambient Shapes -->
+  <div class="error-bg-shapes">
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+  </div>
+
+  <main class="error-card">
+    <div class="error-medical-icon">
+      <i class="fa-solid fa-flask-vial"></i>
+    </div>
+
+    <div class="error-badge">
+      <i class="fa-solid fa-triangle-exclamation"></i> Error Code 404
+    </div>
+
+    <div class="error-code">4<span>0</span>4</div>
+
+    <h1 class="error-title">Oops! This Page Is Outside Our Lab.</h1>
+    
+    <p class="error-desc">
+      The page you are looking for may have moved or is not available. Please verify the URL or return to our diagnostic home portal.
+    </p>
+
+    <div class="error-actions">
+      <button type="button" class="btn btn-outline" id="backHistoryBtn" onclick="goBack()">
+        <i class="fa-solid fa-arrow-left"></i> Go Back
+      </button>
+      <a href="index.html" class="btn btn-teal">
+        <i class="fa-solid fa-house"></i> Home
+      </a>
+    </div>
+
+    <div style="margin-top: 2.5rem; font-size: 0.8rem; color: var(--text-muted); border-top: 1px solid var(--border-light); padding-top: 1.5rem;">
+      Need assistance? Contact our <a href="Contact.html" style="color:var(--teal-accent); text-decoration:underline;">Laboratory Helpdesk</a> or check our <a href="Tests.html" style="color:var(--teal-accent); text-decoration:underline;">Test Directory</a>.
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <!-- AOS Animation Library via CDNJS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    function goBack() {
+      if (window.history.length > 1) {
+        window.history.back();
+      } else if (document.referrer) {
+        window.location.href = document.referrer;
+      } else {
+        window.history.back();
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof AOS !== 'undefined') {
+        AOS.init({ duration: 750, once: true });
+      }
+
+      // GSAP Animations
+      if (typeof gsap !== 'undefined') {
+        gsap.fromTo('.error-card', {
+          scale: 0.95,
+          opacity: 0,
+          y: 25
+        }, {
+          scale: 1,
+          opacity: 1,
+          y: 0,
+          duration: 0.7,
+          ease: 'power2.out',
+          clearProps: 'all'
+        });
+
+        gsap.to('.floating-shape', {
+          y: 25,
+          x: 15,
+          duration: 6,
+          repeat: -1,
+          yoyo: true,
+          ease: 'sine.inOut'
+        });
+      }
+    });
+  </script>
+</body>
+</html>

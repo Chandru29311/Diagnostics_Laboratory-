@@ -1,0 +1,267 @@
+/* ==========================================================================
+   DIAGNOSTIC LABORATORY - SERVICES PAGE STYLES (services.css)
+   ========================================================================== */
+
+/* Guaranteed Visibility */
+.department-content,
+.department-visual,
+.sample-guide-card {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Department Detailed Section */
+.department-block {
+  padding: 4.5rem 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.department-block:nth-child(even) {
+  background: var(--surface-bg);
+}
+
+.department-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.department-grid.reverse {
+  grid-template-columns: 1fr 1fr;
+}
+
+.department-grid.reverse .department-content {
+  order: 2;
+}
+
+.department-grid.reverse .department-visual {
+  order: 1;
+}
+
+.department-visual {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-light);
+}
+
+.department-visual img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.department-visual:hover img {
+  transform: scale(1.05);
+}
+
+.department-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--teal-accent);
+  background: var(--teal-accent-light);
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.department-content h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-navy);
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.department-content p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+}
+
+.dept-key-tests {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.dept-test-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--primary-navy);
+}
+
+.dept-test-item i {
+  color: var(--teal-accent);
+  font-size: 0.8rem;
+}
+
+/* Sample Collection Info Guide */
+.sample-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+  align-items: stretch;
+}
+
+.sample-guide-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transform: translateY(0);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.sample-guide-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: var(--shadow-md);
+}
+
+.sample-guide-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--surface-bg);
+  color: var(--teal-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid rgba(32, 184, 166, 0.2);
+  flex-shrink: 0;
+}
+
+.sample-guide-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  min-height: 2.8rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.sample-guide-card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  flex: 1;
+}
+
+.sample-guide-card li {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.sample-guide-card li i {
+  color: var(--teal-accent);
+  margin-top: 0.25rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .sample-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .department-grid,
+  .department-grid.reverse {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+  .department-grid.reverse .department-content {
+    order: 1;
+  }
+  .department-grid.reverse .department-visual {
+    order: 2;
+  }
+  .department-visual img {
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .department-content h3 {
+    font-size: 1.85rem;
+  }
+  .department-visual img {
+    height: 300px;
+  }
+  .sample-info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .dept-key-tests {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+  .department-visual img {
+    height: 240px;
+  }
+}
+
+@media (max-width: 425px) {
+  .department-content h3 {
+    font-size: 1.6rem;
+  }
+  .sample-guide-card {
+    padding: 1.65rem 1.25rem;
+  }
+  .department-badge-pill {
+    font-size: 0.72rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .department-content h3 {
+    font-size: 1.45rem;
+  }
+  .department-visual img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 320px) {
+  .department-content h3 {
+    font-size: 1.3rem;
+  }
+  .department-visual img {
+    height: 175px;
+  }
+  .dept-key-tests {
+    padding: 0.85rem 0.65rem;
+  }
+  .sample-guide-card {
+    padding: 1.35rem 1rem;
+  }
+}

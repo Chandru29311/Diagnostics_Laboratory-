@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagnostic Tests Directory — Search, Filter & Schedule Tests | Apex Diagnostics</title>
+  <meta name="description" content="Browse our complete directory of clinical pathology, biochemistry, microbiology, and hormone tests. Filter by sample type, fasting guidelines, or category.">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- AOS (Animate On Scroll) & Animate.css via CDNJS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/tests.css">
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader-spinner"></div>
+    <div class="preloader-text">Apex Diagnostics &bull; Tests Directory</div>
+  </div>
+
+
+
+  <!-- Common Navigation Bar -->
+  <header class="site-navbar">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-logo" aria-label="Apex Diagnostics Home">
+        <img src="assets/logo_0013.webp" alt="Apex Diagnostics" class="brand-logo-img">
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="About.html" class="nav-link">About</a>
+        <a href="Services.html" class="nav-link">Services</a>
+        <a href="Tests.html" class="nav-link active">Diagnostic Tests</a>
+        <a href="Contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Desktop Nav Actions -->
+      <div class="nav-actions">
+        <a href="Login.html" class="nav-login-btn">
+          <i class="fa-regular fa-user"></i> Login
+        </a>
+      </div>
+
+      <!-- Hamburger Button (Mobile) -->
+      <button class="hamburger-btn" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-overlay"></div>
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-header">
+      <a href="index.html" class="mobile-brand-logo" aria-label="Stackly Home">
+        <img src="assets/logo_0013.webp" alt="Stackly" class="mobile-brand-logo-img">
+      </a>
+      <button type="button" class="mobile-nav-close-btn" aria-label="Close navigation menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="About.html" class="mobile-nav-link">About <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="Services.html" class="mobile-nav-link">Services <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="Tests.html" class="mobile-nav-link active">Diagnostic Tests <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="Contact.html" class="mobile-nav-link">Contact <i class="fa-solid fa-chevron-right"></i></a>
+    </nav>
+    <div class="mobile-nav-actions">
+      <a href="Login.html" class="btn btn-outline" style="width:100%;">
+        <i class="fa-solid fa-right-to-bracket"></i> Patient & Admin Login
+      </a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- Tests Directory Hero -->
+    <section class="page-hero">
+      <img src="assets/laboratory-equipment.webp" alt="Diagnostic Equipment" class="page-hero-bg">
+      <div class="page-hero-overlay"></div>
+      <div class="container">
+        <div class="page-hero-content" data-aos="fade-up">
+          <span class="section-tag" style="background:rgba(32,184,166,0.25); color:#20B8A6;">Diagnostic Directory</span>
+          <h1 class="page-hero-title">Diagnostic Tests Directory</h1>
+          <p class="page-hero-subtitle">
+            Search our comprehensive menu of clinical laboratory investigations, review specimen requirements, and book appointments directly online.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Popular Health Packages Section -->
+    <section class="section-padding test-packages-section" id="packages-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Curated Diagnostic Panels</span>
+          <h2 class="section-title">Popular Preventive Health Packages</h2>
+          <p class="section-subtitle">
+            Cost-effective multi-parameter wellness profiles designed by senior clinical pathologists for comprehensive organ screening and proactive health monitoring.
+          </p>
+        </div>
+
+        <div class="packages-grid">
+          <!-- Card 1: Comprehensive Executive Health Package -->
+          <div class="package-card featured" data-aos="fade-up-card" data-aos-delay="200">
+            <div class="package-badge-wrap">
+              <span class="package-badge-popular"><i class="fa-solid fa-star"></i> Most Popular</span>
+            </div>
+            <div class="package-header">
+              <span class="package-category">Full Body Health</span>
+              <h3 class="package-title">Comprehensive Executive Health Package</h3>
+              <p class="package-desc">Holistic 360° health assessment evaluating heart, liver, kidneys, metabolism, vitamins, and cellular hematology.</p>
+              <div class="package-price-wrap">
+                <span class="package-price-curr">$</span>
+                <span class="package-price-val">149</span>
+                <span class="package-price-period">/ complete panel</span>
+              </div>
+            </div>
+
+            <div class="package-meta-bar">
+              <div class="meta-item"><i class="fa-solid fa-list-check"></i> <strong>65+</strong> Parameters</div>
+              <div class="meta-item"><i class="fa-regular fa-clock"></i> <strong>24h</strong> Turnaround</div>
+              <div class="meta-item"><i class="fa-solid fa-utensils"></i> <strong>10-12h</strong> Fasting</div>
+            </div>
+
+            <div class="package-body">
+              <div class="package-included-label">Key Diagnostic Assays Included:</div>
+              <ul class="package-tests-list">
+                <li><i class="fa-solid fa-circle-check"></i> Complete Hemogram (CBC + 5-Part Laser Differential)</li>
+                <li><i class="fa-solid fa-circle-check"></i> Comprehensive Lipid Profile (Cholesterol, HDL, LDL, VLDL, Triglycerides)</li>
+                <li><i class="fa-solid fa-circle-check"></i> Liver Function Panel (Bilirubin, SGOT, SGPT, Alkaline Phosphatase)</li>
+                <li><i class="fa-solid fa-circle-check"></i> Kidney Function Panel (Creatinine, BUN, Uric Acid, eGFR)</li>
+                <li><i class="fa-solid fa-circle-check"></i> Diabetes Screen (Fasting Blood Sugar & HbA1c Glycated Hb)</li>
+                <li><i class="fa-solid fa-circle-check"></i> Thyroid Stimulating Hormone (TSH Ultra-Sensitive)</li>
+                <li><i class="fa-solid fa-circle-check"></i> Vitamin D 25-Hydroxy & Vitamin B12 Immunoassay</li>
+                <li><i class="fa-solid fa-circle-check"></i> Routine & Microscopic Urinalysis</li>
+              </ul>
+            </div>
+
+            <div class="package-footer">
+              <div class="package-perk-note">
+                <i class="fa-solid fa-house-medical-flag" style="color:var(--teal-accent);"></i> Free Doorstep Phlebotomy Included
+              </div>
+              <button type="button" class="btn btn-teal btn-block" onclick="triggerBookingModal('Comprehensive Executive Health Package')">
+                <i class="fa-regular fa-calendar-check"></i> Book Package Now
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 2: Cardiac & Lipid Screening Package -->
+          <div class="package-card" data-aos="fade-up-card" data-aos-delay="320">
+            <div class="package-header">
+              <span class="package-category">Cardiovascular Risk</span>
+              <h3 class="package-title">Cardiac & Lipid Screening Package</h3>
+              <p class="package-desc">Advanced biomarker screening detecting vascular inflammation, coronary plaque vulnerability, and lipid dysregulation.</p>
+              <div class="package-price-wrap">
+                <span class="package-price-curr">$</span>
+                <span class="package-price-val">89</span>
+                <span class="package-price-period">/ profile</span>
+              </div>
+            </div>
+
+            <div class="package-meta-bar">
+              <div class="meta-item"><i class="fa-solid fa-list-check"></i> <strong>18</strong> Parameters</div>
+              <div class="meta-item"><i class="fa-regular fa-clock"></i> <strong>12h</strong> Turnaround</div>
+              <div class="meta-item"><i class="fa-solid fa-utensils"></i> <strong>12h</strong> Fasting</div>
+            </div>
+
+            <div class="package-body">
+              <div class="package-included-label">Key Diagnostic Assays Included:</div>
+              <ul class="package-tests-list">
+                <li><i class="fa-solid fa-circle-check"></i> High-Sensitivity C-Reactive Protein (hs-CRP)</li>
+                <li><i class="fa-solid fa-circle-check"></i> Serum Homocysteine (Vascular Endothelial Risk)</li>
+                <li><i class="fa-solid fa-circle-check"></i> Full Lipid Panel (Total, HDL, LDL, VLDL, Triglycerides)</li>
+                <li><i class="fa-solid fa-circle-check"></i> Apolipoprotein A1 & Apolipoprotein B Ratio</li>
+                <li><i class="fa-solid fa-circle-check"></i> Serum Electrolytes (Sodium, Potassium, Chloride)</li>
+                <li><i class="fa-solid fa-circle-check"></i> Atherogenic Index & Cardiac Risk Ratios</li>
+              </ul>
+            </div>
+
+            <div class="package-footer">
+              <div class="package-perk-note">
+                <i class="fa-solid fa-heart-pulse" style="color:var(--teal-accent);"></i> Clinical Cardiologist Risk Stratification
+              </div>
+              <button type="button" class="btn btn-teal btn-block" onclick="triggerBookingModal('Cardiac & Lipid Screening Package')">
+                <i class="fa-regular fa-calendar-check"></i> Book Package Now
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 3: Diabetes Complete Assessment Package -->
+          <div class="package-card" data-aos="fade-up-card" data-aos-delay="80">
+            <div class="package-header">
+              <span class="package-category">Metabolic & Endocrine</span>
+              <h3 class="package-title">Diabetes Complete Assessment Package</h3>
+              <p class="package-desc">In-depth glycemic evaluation measuring acute blood sugars, 90-day averages, and early renal microvascular health.</p>
+              <div class="package-price-wrap">
+                <span class="package-price-curr">$</span>
+                <span class="package-price-val">79</span>
+                <span class="package-price-period">/ profile</span>
+              </div>
+            </div>
+
+            <div class="package-meta-bar">
+              <div class="meta-item"><i class="fa-solid fa-list-check"></i> <strong>14</strong> Parameters</div>
+              <div class="meta-item"><i class="fa-regular fa-clock"></i> <strong>Same Day</strong> (6h)</div>
+              <div class="meta-item"><i class="fa-solid fa-utensils"></i> <strong>Fasting + PP</strong></div>
+            </div>
+
+            <div class="package-body">
+              <div class="package-included-label">Key Diagnostic Assays Included:</div>
+              <ul class="package-tests-list">
+                <li><i class="fa-solid fa-circle-check"></i> Fasting Plasma Glucose (FPG)</li>
+                <li><i class="fa-solid fa-circle-check"></i> 2-Hour Postprandial Blood Glucose (PPBS)</li>
+                <li><i class="fa-solid fa-circle-check"></i> HbA1c Glycated Hemoglobin (HPLC Gold Standard)</li>
+                <li><i class="fa-solid fa-circle-check"></i> Estimated Average Glucose (eAG)</li>
+                <li><i class="fa-solid fa-circle-check"></i> Urine Microalbumin / Creatinine Ratio (UACR)</li>
+                <li><i class="fa-solid fa-circle-check"></i> Serum Creatinine & Estimated GFR Clearance</li>
+              </ul>
+            </div>
+
+            <div class="package-footer">
+              <div class="package-perk-note">
+                <i class="fa-solid fa-chart-line" style="color:var(--teal-accent);"></i> Longitudinal Glycemic Trend Analysis
+              </div>
+              <button type="button" class="btn btn-teal btn-block" onclick="triggerBookingModal('Diabetes Complete Assessment Package')">
+                <i class="fa-regular fa-calendar-check"></i> Book Package Now
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 4: Women's Wellness Diagnostic Package -->
+          <div class="package-card" data-aos="fade-up-card" data-aos-delay="200">
+            <div class="package-header">
+              <span class="package-category">Women's Health</span>
+              <h3 class="package-title">Women's Wellness Diagnostic Package</h3>
+              <p class="package-desc">Comprehensive hormonal balance, bone density markers, iron reserves, and metabolic screening for every life stage.</p>
+              <div class="package-price-wrap">
+                <span class="package-price-curr">$</span>
+                <span class="package-price-val">119</span>
+                <span class="package-price-period">/ complete panel</span>
+              </div>
+            </div>
+
+            <div class="package-meta-bar">
+              <div class="meta-item"><i class="fa-solid fa-list-check"></i> <strong>42</strong> Parameters</div>
+              <div class="meta-item"><i class="fa-regular fa-clock"></i> <strong>24h</strong> Turnaround</div>
+              <div class="meta-item"><i class="fa-solid fa-utensils"></i> <strong>8-10h</strong> Fasting</div>
+            </div>
+
+            <div class="package-body">
+              <div class="package-included-label">Key Diagnostic Assays Included:</div>
+              <ul class="package-tests-list">
+                <li><i class="fa-solid fa-circle-check"></i> Complete Thyroid Profile (Total T3, Total T4, TSH)</li>
+                <li><i class="fa-solid fa-circle-check"></i> Complete Blood Count & Hemoglobin Differential</li>
+                <li><i class="fa-solid fa-circle-check"></i> Serum Ferritin, Total Iron & Transferrin Saturation</li>
+                <li><i class="fa-solid fa-circle-check"></i> Vitamin D3 25-OH & Total Serum Calcium</li>
+                <li><i class="fa-solid fa-circle-check"></i> Serum Prolactin & Luteinizing Hormone (LH)</li>
+                <li><i class="fa-solid fa-circle-check"></i> Complete Urine Examination with Microscopy</li>
+              </ul>
+            </div>
+
+            <div class="package-footer">
+              <div class="package-perk-note">
+                <i class="fa-solid fa-venus" style="color:var(--teal-accent);"></i> Hormonal & Bone Health Correlation
+              </div>
+              <button type="button" class="btn btn-teal btn-block" onclick="triggerBookingModal('Women\'s Wellness Diagnostic Package')">
+                <i class="fa-regular fa-calendar-check"></i> Book Package Now
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 5: Basic Health Checkup Package -->
+          <div class="package-card" data-aos="fade-up-card" data-aos-delay="320">
+            <div class="package-header">
+              <span class="package-category">Routine Screening</span>
+              <h3 class="package-title">Basic Health Checkup Package</h3>
+              <p class="package-desc">Essential baseline medical investigations ideal for routine annual physicals, visa health checks, and employment onboarding.</p>
+              <div class="package-price-wrap">
+                <span class="package-price-curr">$</span>
+                <span class="package-price-val">65</span>
+                <span class="package-price-period">/ profile</span>
+              </div>
+            </div>
+
+            <div class="package-meta-bar">
+              <div class="meta-item"><i class="fa-solid fa-list-check"></i> <strong>32</strong> Parameters</div>
+              <div class="meta-item"><i class="fa-regular fa-clock"></i> <strong>Same Day</strong> (4h)</div>
+              <div class="meta-item"><i class="fa-solid fa-utensils"></i> <strong>8h</strong> Fasting</div>
+            </div>
+
+            <div class="package-body">
+              <div class="package-included-label">Key Diagnostic Assays Included:</div>
+              <ul class="package-tests-list">
+                <li><i class="fa-solid fa-circle-check"></i> Complete Blood Count (CBC with ESR)</li>
+                <li><i class="fa-solid fa-circle-check"></i> Fasting Blood Glucose Level</li>
+                <li><i class="fa-solid fa-circle-check"></i> Lipid Profile (Cholesterol & Triglycerides)</li>
+                <li><i class="fa-solid fa-circle-check"></i> Liver Enzymes (SGOT / AST & SGPT / ALT)</li>
+                <li><i class="fa-solid fa-circle-check"></i> Serum Creatinine (Kidney Marker)</li>
+                <li><i class="fa-solid fa-circle-check"></i> Routine Urine Physical & Chemical Analysis</li>
+              </ul>
+            </div>
+
+            <div class="package-footer">
+              <div class="package-perk-note">
+                <i class="fa-solid fa-bolt" style="color:var(--teal-accent);"></i> Same-Day Emergency Digital Release
+              </div>
+              <button type="button" class="btn btn-teal btn-block" onclick="triggerBookingModal('Basic Health Checkup Package')">
+                <i class="fa-regular fa-calendar-check"></i> Book Package Now
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 6: Senior Citizen Vitality Screening -->
+          <div class="package-card" data-aos="fade-up-card" data-aos-delay="80">
+            <div class="package-header">
+              <span class="package-category">Geriatric Wellness</span>
+              <h3 class="package-title">Senior Citizen Vitality Screening</h3>
+              <p class="package-desc">Specialized geriatric screening targeting degenerative joint risks, cardiovascular strain, kidney function, and bone density.</p>
+              <div class="package-price-wrap">
+                <span class="package-price-curr">$</span>
+                <span class="package-price-val">129</span>
+                <span class="package-price-period">/ complete panel</span>
+              </div>
+            </div>
+
+            <div class="package-meta-bar">
+              <div class="meta-item"><i class="fa-solid fa-list-check"></i> <strong>50+</strong> Parameters</div>
+              <div class="meta-item"><i class="fa-regular fa-clock"></i> <strong>24h</strong> Turnaround</div>
+              <div class="meta-item"><i class="fa-solid fa-utensils"></i> <strong>10-12h</strong> Fasting</div>
+            </div>
+
+            <div class="package-body">
+              <div class="package-included-label">Key Diagnostic Assays Included:</div>
+              <ul class="package-tests-list">
+                <li><i class="fa-solid fa-circle-check"></i> Complete Hemogram with Peripheral Smear</li>
+                <li><i class="fa-solid fa-circle-check"></i> Comprehensive Renal & Hepatic Function Panels</li>
+                <li><i class="fa-solid fa-circle-check"></i> Glycated Hemoglobin (HbA1c) & Fasting Sugar</li>
+                <li><i class="fa-solid fa-circle-check"></i> Serum Calcium, Phosphorus & Uric Acid (Gout Screen)</li>
+                <li><i class="fa-solid fa-circle-check"></i> Vitamin D3 25-OH & Vitamin B12 Levels</li>
+                <li><i class="fa-solid fa-circle-check"></i> Free PSA (Men) / Thyroid Profile (Women)</li>
+              </ul>
+            </div>
+
+            <div class="package-footer">
+              <div class="package-perk-note">
+                <i class="fa-solid fa-heart" style="color:var(--teal-accent);"></i> Priority Home Phlebotomy & Gentle Care
+              </div>
+              <button type="button" class="btn btn-teal btn-block" onclick="triggerBookingModal('Senior Citizen Vitality Screening')">
+                <i class="fa-regular fa-calendar-check"></i> Book Package Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section-padding process-section" id="process-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Patient Experience</span>
+          <h2 class="section-title">How Your Testing Journey Works</h2>
+          <p class="section-subtitle">
+            From easy online scheduling to automated barcoded analysis and encrypted digital report access, experience a streamlined, patient-first workflow.
+          </p>
+        </div>
+
+        <div class="process-steps-grid">
+          <!-- Step 1 -->
+          <div class="process-step-card" data-aos="fade-up-card" data-aos-delay="100">
+            <div class="step-badge">Step 01</div>
+            <div class="step-icon">
+              <i class="fa-solid fa-magnifying-glass-chart"></i>
+            </div>
+            <h4>Search & Select Tests</h4>
+            <p>
+              Explore our directory of 120+ clinical assays or select a packaged wellness panel with transparent pricing and clear preparation requirements.
+            </p>
+            <div class="step-feature-pill">
+              <i class="fa-solid fa-check"></i> Instant Online Booking
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="process-step-card" data-aos="fade-up-card" data-aos-delay="200">
+            <div class="step-badge">Step 02</div>
+            <div class="step-icon">
+              <i class="fa-solid fa-house-medical"></i>
+            </div>
+            <h4>Lab Visit or Home Collection</h4>
+            <p>
+              Choose a walk-in time slot at our central laboratory or request a certified, vaccinated phlebotomist to collect your sample comfortably at your home.
+            </p>
+            <div class="step-feature-pill">
+              <i class="fa-solid fa-check"></i> 100% Sterile Vacutainers
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="process-step-card" data-aos="fade-up-card" data-aos-delay="300">
+            <div class="step-badge">Step 03</div>
+            <div class="step-icon">
+              <i class="fa-solid fa-flask-vial"></i>
+            </div>
+            <h4>Automated Robotic Testing</h4>
+            <p>
+              Samples are barcoded at the point of draw and analyzed in our CAP/ISO accredited laboratory with multi-point calibrations and dual pathologist review.
+            </p>
+            <div class="step-feature-pill">
+              <i class="fa-solid fa-check"></i> Zero-Mixup Barcodes
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="process-step-card" data-aos="fade-up-card" data-aos-delay="400">
+            <div class="step-badge">Step 04</div>
+            <div class="step-icon">
+              <i class="fa-solid fa-file-shield"></i>
+            </div>
+            <h4>Encrypted Digital Reports</h4>
+            <p>
+              Receive your verified PDF report via SMS, email, and the 24/7 patient portal. Access historical trend comparisons and physician tele-consultation.
+            </p>
+            <div class="step-feature-pill">
+              <i class="fa-solid fa-check"></i> Same-Day / 24h Turnaround
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pre-Test Preparation Guidelines -->
+    <section class="section-padding prep-guidelines-section" id="preparation-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Clinical Accuracy</span>
+          <h2 class="section-title">Pre-Test Preparation Guidelines</h2>
+          <p class="section-subtitle">
+            Pre-analytical conditions directly affect diagnostic accuracy. Follow these evidence-based laboratory instructions before your specimen collection.
+          </p>
+        </div>
+
+        <div class="prep-cards-grid">
+          <!-- Card 1: Fasting Protocol -->
+          <div class="prep-card" data-aos="fade-up-card" data-aos-delay="180">
+            <div class="prep-card-header">
+              <div class="prep-icon-box">
+                <i class="fa-solid fa-utensils"></i>
+              </div>
+              <div>
+                <span class="prep-type-badge">Critical Requirement</span>
+                <h4 class="prep-title">Fasting Protocol (8–12 Hours)</h4>
+              </div>
+            </div>
+            <div class="prep-card-body">
+              <p>
+                Required for <strong>Lipid Profile, Fasting Blood Sugar (FBS), Insulin, and Comprehensive Metabolic Panels</strong>.
+              </p>
+              <ul class="prep-check-list">
+                <li><i class="fa-solid fa-check"></i> <strong>Plain water is allowed & recommended</strong> to keep your veins well-hydrated.</li>
+                <li><i class="fa-solid fa-xmark"></i> Strictly avoid tea, coffee, milk, juices, chewing gum, and sodas.</li>
+                <li><i class="fa-solid fa-xmark"></i> Do not smoke or consume alcohol 24 hours prior to blood collection.</li>
+                <li><i class="fa-solid fa-circle-info"></i> Best scheduled between 07:00 AM – 09:30 AM.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Card 2: Medications & Supplements -->
+          <div class="prep-card" data-aos="fade-up-card" data-aos-delay="280">
+            <div class="prep-card-header">
+              <div class="prep-icon-box">
+                <i class="fa-solid fa-pills"></i>
+              </div>
+              <div>
+                <span class="prep-type-badge">Medication Safety</span>
+                <h4 class="prep-title">Medications & Supplements</h4>
+              </div>
+            </div>
+            <div class="prep-card-body">
+              <p>
+                Essential for <strong>Thyroid Assays (TSH, FT4), Therapeutic Drug Monitoring, and Vitamin Profiles</strong>.
+              </p>
+              <ul class="prep-check-list">
+                <li><i class="fa-solid fa-check"></i> Continue life-saving medications (e.g. blood pressure) with water unless instructed otherwise.</li>
+                <li><i class="fa-solid fa-triangle-exclamation"></i> <strong>Thyroid medicine:</strong> Postpone morning dose until after the blood sample is collected.</li>
+                <li><i class="fa-solid fa-triangle-exclamation"></i> <strong>Biotin supplements:</strong> Pause high-dose biotin 48 hours prior to hormone immunoassays.</li>
+                <li><i class="fa-solid fa-circle-info"></i> Inform our phlebotomist of all ongoing prescriptions during sample intake.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Card 3: Specimen Hygiene (Urine & Stool) -->
+          <div class="prep-card" data-aos="fade-up-card" data-aos-delay="380">
+            <div class="prep-card-header">
+              <div class="prep-icon-box">
+                <i class="fa-solid fa-vial"></i>
+              </div>
+              <div>
+                <span class="prep-type-badge">Sterility Protocol</span>
+                <h4 class="prep-title">Urine & Specimen Hygiene</h4>
+              </div>
+            </div>
+            <div class="prep-card-body">
+              <p>
+                Applies to <strong>Urinalysis, Urine Culture, Semen Analysis, and Stool Occult Blood</strong> tests.
+              </p>
+              <ul class="prep-check-list">
+                <li><i class="fa-solid fa-check"></i> Use only sterile, sealed containers supplied by Apex Diagnostics.</li>
+                <li><i class="fa-solid fa-check"></i> <strong>Midstream Clean Catch:</strong> Discard initial urine stream and collect the middle volume without touching container rim.</li>
+                <li><i class="fa-solid fa-clock"></i> Submit specimen to the lab within 1–2 hours or refrigerate at 2–8°C.</li>
+                <li><i class="fa-solid fa-circle-info"></i> For 24-hour urine tests, request our specialized preservative container.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Card 4: Hydration & Physical Activity -->
+          <div class="prep-card" data-aos="fade-up-card" data-aos-delay="80">
+            <div class="prep-card-header">
+              <div class="prep-icon-box">
+                <i class="fa-solid fa-person-running"></i>
+              </div>
+              <div>
+                <span class="prep-type-badge">Physical Readiness</span>
+                <h4 class="prep-title">Hydration & Activity Levels</h4>
+              </div>
+            </div>
+            <div class="prep-card-body">
+              <p>
+                Directly impacts <strong>Complete Blood Count, Creatinine, Electrolytes, CPK & Muscle Enzymes</strong>.
+              </p>
+              <ul class="prep-check-list">
+                <li><i class="fa-solid fa-check"></i> Drink 1–2 glasses of drinking water 30 minutes before phlebotomy to ease venipuncture.</li>
+                <li><i class="fa-solid fa-xmark"></i> Avoid intense gym workouts, heavy weightlifting, and marathon training 24 hours prior.</li>
+                <li><i class="fa-solid fa-check"></i> Rest quietly for 10–15 minutes before blood pressure and blood drawing.</li>
+                <li><i class="fa-solid fa-circle-info"></i> Wear loose-fitting clothing with sleeves that roll up easily past the elbow.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Home Sample Collection Feature -->
+    <section class="section-padding home-collection-section" id="home-collection-section">
+      <div class="container">
+        <div class="home-collection-card">
+          <div class="home-collection-grid">
+            <div class="home-collection-content" data-aos="fade-right">
+              <span class="section-tag" style="background:rgba(32,184,166,0.18); color:var(--teal-accent);">Doorstep Phlebotomy</span>
+              <h2 class="home-collection-title">Safe, Painless Sample Collection from the Comfort of Your Home</h2>
+              <p class="home-collection-desc">
+                Skip morning traffic, parking hassles, and crowded waiting rooms. Our certified phlebotomists arrive equipped with hospital-grade vacuum collection systems and digital cold-chain temperature loggers.
+              </p>
+
+              <div class="home-collection-features">
+                <div class="hc-feature-item">
+                  <div class="hc-feature-icon"><i class="fa-solid fa-shield-virus"></i></div>
+                  <div>
+                    <h5>100% Sterile & Single-Use</h5>
+                    <p>Tamper-evident BD Vacutainer safety needles and vacuum tubes unsealed right in front of you.</p>
+                  </div>
+                </div>
+
+                <div class="hc-feature-item">
+                  <div class="hc-feature-icon"><i class="fa-solid fa-snowflake"></i></div>
+                  <div>
+                    <h5>Active Cold-Chain Transport (&lt;4°C)</h5>
+                    <p>Digital temperature-controlled coolboxes maintain specimen integrity from your doorstep to our analyzers.</p>
+                  </div>
+                </div>
+
+                <div class="hc-feature-item">
+                  <div class="hc-feature-icon"><i class="fa-solid fa-user-nurse"></i></div>
+                  <div>
+                    <h5>Certified & Vaccinated Specialists</h5>
+                    <p>Experienced healthcare phlebotomists trained specifically in gentle, painless pediatric and geriatric care.</p>
+                  </div>
+                </div>
+
+                <div class="hc-feature-item">
+                  <div class="hc-feature-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                  <div>
+                    <h5>Convenient Early Morning Slots</h5>
+                    <p>Slots open daily from 6:30 AM to 7:00 PM, 365 days a year across the entire metropolitan region.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="home-collection-actions">
+                <button type="button" class="btn btn-teal btn-lg" onclick="triggerBookingModal()">
+                  <i class="fa-regular fa-calendar-check"></i> Book Home Collection Now
+                </button>
+                <a href="tel:9876543210" class="btn btn-outline btn-lg" style="color:#FFFFFF; border-color:rgba(255,255,255,0.4);">
+                  <i class="fa-solid fa-phone"></i> Call +91 9876543210
+                </a>
+              </div>
+            </div>
+
+            <div class="home-collection-visual" data-aos="fade-left">
+              <div class="hc-image-wrapper">
+                <img src="assets/sample-collection.webp" alt="Phlebotomist collecting blood sample" class="hc-img">
+                <div class="hc-floating-badge">
+                  <i class="fa-solid fa-shield-halved"></i>
+                  <div>
+                    <strong>Zero Contamination</strong>
+                    <span>Sterile Safety Protocol</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quality & Accreditations Section -->
+    <section class="section-padding quality-section" id="quality-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Clinical Excellence</span>
+          <h2 class="section-title">Why Clinicians & Patients Trust Apex Diagnostics</h2>
+          <p class="section-subtitle">
+            Diagnostic insights guide over 70% of medical decisions. We enforce stringent laboratory rigor to guarantee reliable, actionable results.
+          </p>
+        </div>
+
+        <div class="quality-grid">
+          <div class="quality-card" data-aos="flip-soft" data-aos-delay="180">
+            <div class="quality-icon">
+              <i class="fa-solid fa-certificate"></i>
+            </div>
+            <h4>ISO 15189:2022 Certified</h4>
+            <p>
+              Full compliance with international medical laboratory quality and competence standards, governing every phase from sample draw to result reporting.
+            </p>
+            <div class="quality-metric">
+              <span class="qm-number">100%</span>
+              <span class="qm-label">Standard Operating Protocol Compliance</span>
+            </div>
+          </div>
+
+          <div class="quality-card" data-aos="flip-soft" data-aos-delay="280">
+            <div class="quality-icon">
+              <i class="fa-solid fa-user-doctor"></i>
+            </div>
+            <h4>Dual Pathologist Sign-Off</h4>
+            <p>
+              Every unexpected, critical, or abnormal biological value is re-run and independently evaluated by two board-certified pathologists prior to release.
+            </p>
+            <div class="quality-metric">
+              <span class="qm-number">2x</span>
+              <span class="qm-label">Independent Pathologist Verification</span>
+            </div>
+          </div>
+
+          <div class="quality-card" data-aos="flip-soft" data-aos-delay="380">
+            <div class="quality-icon">
+              <i class="fa-solid fa-barcode"></i>
+            </div>
+            <h4>Automated LIS Track & Trace</h4>
+            <p>
+              Automated bidirectional Laboratory Information System (LIS) integration eliminates human handwriting errors and guarantees 0% sample mix-ups.
+            </p>
+            <div class="quality-metric">
+              <span class="qm-number">0.00%</span>
+              <span class="qm-label">Sample Misidentification Margin</span>
+            </div>
+          </div>
+
+          <div class="quality-card" data-aos="flip-soft" data-aos-delay="80">
+            <div class="quality-icon">
+              <i class="fa-solid fa-sliders"></i>
+            </div>
+            <h4>Daily Multi-Level EQAS & QC</h4>
+            <p>
+              Continuous six-sigma quality control runs with regular participation in international External Quality Assessment Schemes (EQAS) by Bio-Rad and CAP.
+            </p>
+            <div class="quality-metric">
+              <span class="qm-number">6-Sigma</span>
+              <span class="qm-label">Analytical Precision Standard</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Frequently Asked Questions Section -->
+    <section class="section-padding test-faq-section" id="faq-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Patient Inquiries</span>
+          <h2 class="section-title">Frequently Asked Questions About Lab Tests</h2>
+          <p class="section-subtitle">
+            Find immediate answers regarding prescription needs, fasting rules, digital report delivery, and home collection protocols.
+          </p>
+        </div>
+
+        <div class="tests-faq-wrapper">
+          <!-- FAQ 1 -->
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="140">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>Do I need a doctor's prescription to book tests at Apex Diagnostics?</span>
+              <i class="fa-solid fa-chevron-down faq-chevron"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                No prescription is required for routine wellness checkups, preventive health packages, or common monitoring tests (such as Complete Blood Count, Lipid Profile, Thyroid TSH, Blood Sugar, or Vitamin levels). You can book them directly online. However, if you are undergoing specialized molecular tests, genetic assays, or tests intended for insurance reimbursement, having your physician's requisition slip is helpful for clinical correlation.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="220">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>How and when will I receive my laboratory test reports?</span>
+              <i class="fa-solid fa-chevron-down faq-chevron"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Most routine tests (Hematology, Biochemistry, Urinalysis) are completed within 4 to 8 hours on the same day. As soon as the report is reviewed and digitally authenticated by our consultant pathologist, you will receive an SMS and email notification with an encrypted direct PDF link. You can also log into our 24/7 Patient Portal to view and compare your historical reports over time.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>What should I do if I accidentally ate or drank before a fasting test?</span>
+              <i class="fa-solid fa-chevron-down faq-chevron"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Consuming food or beverages other than plain water triggers the release of insulin, alters blood glucose, elevates serum triglycerides, and can falsely elevate certain liver enzymes. If you accidentally consumed anything within the fasting window, please let our phlebotomist know upon arrival. We can either reschedule your fasting test for the following morning at no charge or mark the specimen as "Random / Non-Fasting" if your physician approves.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="60">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>Are Apex Diagnostics test reports accepted by hospitals and doctors?</span>
+              <i class="fa-solid fa-chevron-down faq-chevron"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Yes, absolutely. Apex Diagnostics operates under strict ISO 15189:2022 quality guidelines and standard reference methodologies. Our analytical reports are trusted and accepted by private clinics, major hospital networks, corporate health departments, and international medical authorities.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="140">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>Can I reschedule or cancel my home sample collection appointment?</span>
+              <i class="fa-solid fa-chevron-down faq-chevron"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Yes. You can reschedule or cancel your appointment anytime up to 2 hours before the scheduled time slot without any cancellation fee. Simply call our accessioning desk at +91 9876543210 or email info@stackly.com, or manage your booking directly through your Patient Portal dashboard.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="220">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>How does home sample collection ensure sample freshness and accuracy?</span>
+              <i class="fa-solid fa-chevron-down faq-chevron"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Our phlebotomists carry calibrated, temperature-monitored cold-chain carrier boxes equipped with real-time digital dataloggers maintaining a strict 2°C to 4°C environment. Each specimen tube is vacuum-drawn and barcoded at your bedside, ensuring seamless specimen preservation and zero sample mix-up during transit to our central laboratory.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Help Banner -->
+    <section class="section-padding" id="help-section" style="background:#FFFFFF; border-top:1px solid var(--border-light);">
+      <div class="container">
+        <div class="cta-banner-card" style="background:linear-gradient(135deg, #0E2A42 0%, var(--primary-navy) 100%);">
+          <div class="cta-banner-content">
+            <span class="section-tag" style="background:rgba(32,184,166,0.2); color:#20B8A6;">Personalized Guidance</span>
+            <h2 class="cta-banner-title">Cannot Find the Test You Need?</h2>
+            <p class="cta-banner-desc">Our laboratory performs over 120 specialized assays and esoteric send-out tests. Contact our accessioning desk for specific specimen handling guidelines.</p>
+            <div class="cta-banner-actions">
+              <a href="Contact.html" class="btn btn-teal btn-lg">
+                <i class="fa-solid fa-headset"></i> Contact Accessioning Desk
+              </a>
+              <button type="button" class="btn btn-outline-white btn-lg" onclick="triggerBookingModal()">
+                <i class="fa-regular fa-calendar-check"></i> Schedule General Visit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Common Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" aria-label="Apex Diagnostics Home">
+            <img src="assets/logo_0013.webp" alt="Apex Diagnostics" class="brand-logo-img">
+          </a>
+          <p>
+            Apex Diagnostics is a high-precision medical laboratory dedicated to delivering accurate, reliable, and timely diagnostic insights to empower clinical decisions and proactive patient wellness.
+          </p>
+          <div class="social-links">
+            <a href="404.html" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="404.html" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <div class="footer-menu">
+            <a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a>
+            <a href="About.html"><i class="fa-solid fa-angle-right"></i> About Us</a>
+            <a href="Services.html"><i class="fa-solid fa-angle-right"></i> Services</a>
+            <a href="Tests.html"><i class="fa-solid fa-angle-right"></i> Diagnostic Tests</a>
+            <a href="Contact.html"><i class="fa-solid fa-angle-right"></i> Contact Us</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Lab Services</h4>
+          <div class="footer-menu">
+            <a href="Services.html#blood-testing"><i class="fa-solid fa-angle-right"></i> Blood Tests</a>
+            <a href="Services.html#clinical-pathology"><i class="fa-solid fa-angle-right"></i> Clinical Pathology</a>
+            <a href="Services.html#biochemistry"><i class="fa-solid fa-angle-right"></i> Biochemistry</a>
+            <a href="Services.html#microbiology"><i class="fa-solid fa-angle-right"></i> Microbiology</a>
+            <a href="Services.html#hormones"><i class="fa-solid fa-angle-right"></i> Hormone Testing</a>
+            <a href="Services.html#preventive"><i class="fa-solid fa-angle-right"></i> Health Packages</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Patient Support</h4>
+          <div class="footer-menu">
+            <a href="javascript:triggerBookingModal()"><i class="fa-solid fa-angle-right"></i> Book Appointment</a>
+            <a href="ClientDashboard.html"><i class="fa-solid fa-angle-right"></i> Report Access</a>
+            <a href="Tests.html"><i class="fa-solid fa-angle-right"></i> Test Prep Guide</a>
+            <a href="Contact.html#faq"><i class="fa-solid fa-angle-right"></i> Patient FAQs</a>
+            <a href="Contact.html"><i class="fa-solid fa-angle-right"></i> Support Helpdesk</a>
+            <a href="404.html"><i class="fa-solid fa-angle-right"></i> Privacy Charter</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Laboratory Hours</h4>
+          <div class="footer-contact-item">
+            <i class="fa-regular fa-clock"></i>
+            <div>
+              <strong>Mon – Fri:</strong> 06:30 AM – 08:00 PM<br>
+              <strong>Saturday:</strong> 07:00 AM – 05:00 PM<br>
+              <strong>Sunday:</strong> 08:00 AM – 01:00 PM (Emergency)
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>MMR Complex, Chinna Thirupathi, near Chinna Muniyappan Kovil, Salem, Tamil Nadu 636008</div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <div><a href="tel:9876543210" style="color:inherit; text-decoration:none;">+91 9876543210</a></div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <div><a href="mailto:info@stackly.com" style="color:inherit; text-decoration:none;">info@stackly.com</a></div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Apex Diagnostics Laboratory. All rights reserved. (Frontend Interactive Demonstration)
+        </div>
+        <div class="footer-bottom-links">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms of Service</a>
+          <a href="404.html">Quality Assurance Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- AOS Animation Library via CDNJS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/tests.js"></script>
+</body>
+</html>

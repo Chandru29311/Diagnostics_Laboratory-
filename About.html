@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Apex Diagnostics — Clinical Laboratory Excellence & Integrity</title>
+  <meta name="description" content="Learn about Apex Diagnostics: our clinical mission, quality assurance protocols, modern instrumentation, and patient-centered diagnostic approach.">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- AOS (Animate On Scroll) & Animate.css via CDNJS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/about.css">
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader-spinner"></div>
+    <div class="preloader-text">Apex Diagnostics &bull; About Us</div>
+  </div>
+
+
+
+  <!-- Common Navigation Bar -->
+  <header class="site-navbar">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-logo" aria-label="Apex Diagnostics Home">
+        <img src="assets/logo_0013.webp" alt="Apex Diagnostics" class="brand-logo-img">
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="About.html" class="nav-link active">About</a>
+        <a href="Services.html" class="nav-link">Services</a>
+        <a href="Tests.html" class="nav-link">Diagnostic Tests</a>
+        <a href="Contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Desktop Nav Actions -->
+      <div class="nav-actions">
+        <a href="Login.html" class="nav-login-btn">
+          <i class="fa-regular fa-user"></i> Login
+        </a>
+      </div>
+
+      <!-- Hamburger Button (Mobile) -->
+      <button class="hamburger-btn" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-overlay"></div>
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-header">
+      <a href="index.html" class="mobile-brand-logo" aria-label="Stackly Home">
+        <img src="assets/logo_0013.webp" alt="Stackly" class="mobile-brand-logo-img">
+      </a>
+      <button type="button" class="mobile-nav-close-btn" aria-label="Close navigation menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="About.html" class="mobile-nav-link active">About <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="Services.html" class="mobile-nav-link">Services <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="Tests.html" class="mobile-nav-link">Diagnostic Tests <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="Contact.html" class="mobile-nav-link">Contact <i class="fa-solid fa-chevron-right"></i></a>
+    </nav>
+    <div class="mobile-nav-actions">
+      <a href="Login.html" class="btn btn-outline" style="width:100%;">
+        <i class="fa-solid fa-right-to-bracket"></i> Patient & Admin Login
+      </a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- 1. About Hero -->
+    <section class="page-hero">
+      <img src="assets/laboratory-facility.webp" alt="Modern Medical Laboratory" class="page-hero-bg">
+      <div class="page-hero-overlay"></div>
+      <div class="container">
+        <div class="page-hero-content" data-aos="fade-up">
+          <span class="section-tag" style="background:rgba(32,184,166,0.25); color:#20B8A6;">Precision Medical Science</span>
+          <h1 class="page-hero-title">Elevating Diagnostic Integrity with Clinical Precision</h1>
+          <p class="page-hero-subtitle">
+            Founded on rigorous methodology and compassionate patient care, Apex Diagnostics provides healthcare providers and patients with the reliable analytical clarity necessary for informed decisions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Laboratory Introduction & 3. Our Story -->
+    <section class="section-padding" style="background: #FFFFFF;">
+      <div class="container">
+        <div class="about-intro-grid">
+          <div class="about-intro-text">
+            <span class="section-tag">Institutional Heritage</span>
+            <h2>Bridging Clinical Excellence with Modern Analytical Technology</h2>
+            <p class="about-intro-lead">
+              At Apex Diagnostics, we recognize that behind every specimen tube, tissue biopsy, or blood smear lies a person seeking answers, reassurance, and proactive guidance.
+            </p>
+            <p>
+              Established as an independent diagnostic reference laboratory, our facility was created to overcome common bottlenecks in outpatient diagnostic medicine: delayed turnaround times, opaque preparation guidelines, and fragmented report delivery.
+            </p>
+            <p>
+              By combining high-throughput clinical chemistry analyzers, molecular PCR platforms, and automated hematology tracks with an intuitive digital portal, we deliver rapid, reproducible, and verifiable laboratory parameters to clinicians and patients alike.
+            </p>
+            <div style="margin-top: 2rem;">
+              <button type="button" class="btn btn-teal" onclick="triggerBookingModal()">
+                <i class="fa-regular fa-calendar-check"></i> Book a Laboratory Visit
+              </button>
+            </div>
+          </div>
+
+          <div class="about-image-card">
+            <img src="assets/diagnostic-services.webp" alt="Laboratory Technologist at Work">
+            <div class="about-floating-badge">
+              <h5>Clinical Quality Standard</h5>
+              <span>Daily Multi-Level Blind Quality Control</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Mission and Vision -->
+    <section class="section-padding" style="background: var(--surface-bg);">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">Our Guiding Purpose</span>
+          <h2 class="section-title">Mission and Vision</h2>
+          <p class="section-subtitle">Dedicated to clinical truth, operational accountability, and accessible healthcare data.</p>
+        </div>
+
+        <div class="mission-vision-grid">
+          <div class="mv-card">
+            <div class="mv-icon"><i class="fa-solid fa-bullseye"></i></div>
+            <h3>Our Mission</h3>
+            <p>
+              To deliver accurate, reproducible, and rapid diagnostic testing services through advanced analytical instrumentation, rigorous quality assurance, and compassionate patient interactions, empowering clinicians to make timely medical decisions.
+            </p>
+          </div>
+
+          <div class="mv-card">
+            <div class="mv-icon"><i class="fa-solid fa-eye"></i></div>
+            <h3>Our Vision</h3>
+            <p>
+              To set the benchmark for modern diagnostic pathology by seamlessly integrating cutting-edge laboratory automation with secure, patient-friendly digital health interfaces that put clinical insights directly into patients' hands.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Our Diagnostic Approach -->
+    <section class="section-padding" style="background: #FFFFFF;">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">The Apex Method</span>
+          <h2 class="section-title">Our Diagnostic Approach</h2>
+          <p class="section-subtitle">A disciplined continuum from pre-analytical collection to post-analytical review.</p>
+        </div>
+
+        <div class="approach-grid">
+          <div class="approach-card">
+            <div class="approach-number">01</div>
+            <h4>Pre-Analytical Vigilance</h4>
+            <p>
+              Over 70% of laboratory errors occur prior to sample testing. We enforce strict barcoded accessioning, sterile needle vacuum collection, and temperature-controlled specimen triage.
+            </p>
+          </div>
+
+          <div class="approach-card">
+            <div class="approach-number">02</div>
+            <h4>Analytical Precision</h4>
+            <p>
+              Our automated biochemistry and immunoassay analyzers operate with dual internal standards, closed-tube sampling, and continuous photometric calibration to minimize variance.
+            </p>
+          </div>
+
+          <div class="approach-card">
+            <div class="approach-number">03</div>
+            <h4>Post-Analytical Oversight</h4>
+            <p>
+              Critical analyte values and anomalous readings automatically trigger reflexive delta-checks and manual review by senior laboratory staff before publication to the portal.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Quality Assurance Process -->
+    <section class="section-padding" style="background: var(--surface-bg);">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">Operational Integrity</span>
+          <h2 class="section-title">Quality Assurance Process</h2>
+          <p class="section-subtitle">Systematic protocols that ensure consistent, verifiable, and reproducible diagnostic results.</p>
+        </div>
+
+        <div class="qa-timeline">
+          <div class="qa-card">
+            <i class="fa-solid fa-scale-balanced qa-card-icon"></i>
+            <h4>Daily Calibration</h4>
+            <p>Multi-point instrument calibration performed each morning using certified reference calibration standards.</p>
+          </div>
+
+          <div class="qa-card">
+            <i class="fa-solid fa-barcode qa-card-icon"></i>
+            <h4>Barcode Chain of Custody</h4>
+            <p>Unique alphanumeric identifiers tied to every tube, preventing cross-specimen misidentification.</p>
+          </div>
+
+          <div class="qa-card">
+            <i class="fa-solid fa-arrows-split-up-and-left qa-card-icon"></i>
+            <h4>Reflexive Delta Checking</h4>
+            <p>Automated algorithms flag dramatic deviations from a patient's historical baseline for re-examination.</p>
+          </div>
+
+          <div class="qa-card">
+            <i class="fa-solid fa-temperature-arrow-down qa-card-icon"></i>
+            <h4>Cold-Chain Monitoring</h4>
+            <p>Continuous digital telemetry loggers inside all reagent refrigerators and bio-repository units.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Laboratory Facilities & 8. Patient-Centered Care -->
+    <section class="section-padding" style="background: #FFFFFF;">
+      <div class="container">
+        <div class="about-intro-grid about-facility-grid">
+          <div class="about-image-card">
+            <img src="assets/laboratory-equipment.webp" alt="High Tech Clinical Analyzer Suite">
+            <div class="about-floating-badge">
+              <h5>Ergonomic Care</h5>
+              <span>Dedicated Private Phlebotomy Suites</span>
+            </div>
+          </div>
+
+          <div class="about-intro-text">
+            <span class="section-tag">Facility & Care</span>
+            <h2>Patient-Centered Care in an Advanced Clinical Setting</h2>
+            <p class="about-intro-lead">
+              Diagnostic tests should never be an intimidating or uncomfortable ordeal.
+            </p>
+            <p>
+              Our outpatient reception and collection rooms are purposefully engineered with calm acoustic shielding, ergonomic collection chairs, and private consultation booths. Certified phlebotomists utilize micro-gauge needles and pediatric-grade collection techniques for minimal discomfort.
+            </p>
+            <p>
+              For patients requiring fasting morning profiles, our specimen collection stations open promptly at 06:30 AM, allowing prompt testing with minimal disruption to your daily schedule.
+            </p>
+            <div class="about-actions-group">
+              <a href="Services.html" class="btn btn-navy">
+                <i class="fa-solid fa-microscope"></i> Explore All Services
+              </a>
+              <a href="Contact.html" class="btn btn-outline">
+                <i class="fa-solid fa-map-location-dot"></i> View Location & Hours
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Team and Expertise (Demo Representations) -->
+    <section class="section-padding" style="background: var(--surface-bg);">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">Clinical Leadership</span>
+          <h2 class="section-title">Our Laboratory Team</h2>
+          <p class="section-subtitle">Dedicated professionals committed to analytical quality and clinical insight. (Illustrative Demo Staff Profiles)</p>
+        </div>
+
+        <div class="team-grid">
+          <!-- Member 1 -->
+          <div class="team-card" data-aos="fade-up-card" data-aos-delay="120">
+            <div class="team-img-wrap">
+              <img src="assets/team-julian-ross.webp" alt="Clinical Director" loading="lazy">
+            </div>
+            <div class="team-body">
+              <span class="team-role">Clinical Director (Demo)</span>
+              <h4>Dr. Julian Ross</h4>
+              <p>Specializes in clinical pathology governance, laboratory instrumentation, and laboratory quality control.</p>
+            </div>
+          </div>
+
+          <!-- Member 2 -->
+          <div class="team-card" data-aos="fade-up-card" data-aos-delay="240">
+            <div class="team-img-wrap">
+              <img src="assets/team-elena-rostova.webp" alt="Chief Pathologist" loading="lazy">
+            </div>
+            <div class="team-body">
+              <span class="team-role">Chief Pathologist (Demo)</span>
+              <h4>Dr. Elena Rostova</h4>
+              <p>Focuses on histopathology, cellular cytology, and abnormal hematologic morphology evaluations.</p>
+            </div>
+          </div>
+
+          <!-- Member 3 -->
+          <div class="team-card" data-aos="fade-up-card" data-aos-delay="360">
+            <div class="team-img-wrap">
+              <img src="assets/team-marcus-vance.webp" alt="Senior Biochemist" loading="lazy">
+            </div>
+            <div class="team-body">
+              <span class="team-role">Senior Biochemist (Demo)</span>
+              <h4>Dr. Marcus Vance</h4>
+              <p>Leads automated clinical chemistry pipelines, metabolic panels, and therapeutic drug monitoring.</p>
+            </div>
+          </div>
+
+          <!-- Member 4 -->
+          <div class="team-card" data-aos="fade-up-card" data-aos-delay="480">
+            <div class="team-img-wrap">
+              <img src="assets/team-clara-sterling.webp" alt="Phlebotomy Supervisor" loading="lazy">
+            </div>
+            <div class="team-body">
+              <span class="team-role">Phlebotomy Lead (Demo)</span>
+              <h4>Clara Sterling</h4>
+              <p>Directs outpatient sample collection, patient comfort protocols, and sterile pre-analytical handling.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. Laboratory Statistics -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item" data-aos="zoom-soft" data-aos-delay="100">
+            <div class="stat-number" data-target="120" data-suffix="+">0</div>
+            <div class="stat-label">Diagnostic Tests Offered</div>
+            <div class="stat-demo-note">(Illustrative benchmark)</div>
+          </div>
+          <div class="stat-item" data-aos="zoom-soft" data-aos-delay="200">
+            <div class="stat-number" data-target="99" data-suffix=".8%">0</div>
+            <div class="stat-label">Internal QC Pass Rate</div>
+            <div class="stat-demo-note">(Demo quality standard)</div>
+          </div>
+          <div class="stat-item" data-aos="zoom-soft" data-aos-delay="300">
+            <div class="stat-number" data-target="45000" data-suffix="+">0</div>
+            <div class="stat-label">Simulated Patient Tests</div>
+            <div class="stat-demo-note">(Demo benchmark metric)</div>
+          </div>
+          <div class="stat-item" data-aos="zoom-soft" data-aos-delay="400">
+            <div class="stat-number" data-target="24" data-suffix="h">0</div>
+            <div class="stat-label">Average Report Turnaround</div>
+            <div class="stat-demo-note">(Routine pathology profile)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. Final CTA -->
+    <section class="section-padding" style="background: #FFFFFF;">
+      <div class="container">
+        <div class="cta-banner-card">
+          <div class="cta-banner-content">
+            <span class="section-tag" style="background:rgba(32,184,166,0.25); color:#20B8A6; border-color:rgba(32,184,166,0.4);">Partner with Apex</span>
+            <h2 class="cta-banner-title">Experience Precision Diagnostic Medicine.</h2>
+            <p class="cta-banner-desc">From routine blood counts to comprehensive executive health packages, our team is prepared to support your health journey with scientific rigor.</p>
+            <div class="cta-banner-actions">
+              <button type="button" class="btn btn-teal btn-lg" onclick="triggerBookingModal()">
+                <i class="fa-solid fa-calendar-check"></i> Book an Appointment
+              </button>
+              <a href="Tests.html" class="btn btn-outline-white btn-lg">
+                <i class="fa-solid fa-vial"></i> Explore Tests Directory
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Common Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" aria-label="Apex Diagnostics Home">
+            <img src="assets/logo_0013.webp" alt="Apex Diagnostics" class="brand-logo-img">
+          </a>
+          <p>
+            Apex Diagnostics is a high-precision medical laboratory dedicated to delivering accurate, reliable, and timely diagnostic insights to empower clinical decisions and proactive patient wellness.
+          </p>
+          <div class="social-links">
+            <a href="404.html" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="404.html" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <div class="footer-menu">
+            <a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a>
+            <a href="About.html"><i class="fa-solid fa-angle-right"></i> About Us</a>
+            <a href="Services.html"><i class="fa-solid fa-angle-right"></i> Services</a>
+            <a href="Tests.html"><i class="fa-solid fa-angle-right"></i> Diagnostic Tests</a>
+            <a href="Contact.html"><i class="fa-solid fa-angle-right"></i> Contact Us</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Lab Services</h4>
+          <div class="footer-menu">
+            <a href="Services.html#blood-testing"><i class="fa-solid fa-angle-right"></i> Blood Tests</a>
+            <a href="Services.html#clinical-pathology"><i class="fa-solid fa-angle-right"></i> Clinical Pathology</a>
+            <a href="Services.html#biochemistry"><i class="fa-solid fa-angle-right"></i> Biochemistry</a>
+            <a href="Services.html#microbiology"><i class="fa-solid fa-angle-right"></i> Microbiology</a>
+            <a href="Services.html#hormones"><i class="fa-solid fa-angle-right"></i> Hormone Testing</a>
+            <a href="Services.html#preventive"><i class="fa-solid fa-angle-right"></i> Health Packages</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Patient Support</h4>
+          <div class="footer-menu">
+            <a href="javascript:triggerBookingModal()"><i class="fa-solid fa-angle-right"></i> Book Appointment</a>
+            <a href="ClientDashboard.html"><i class="fa-solid fa-angle-right"></i> Report Access</a>
+            <a href="Tests.html"><i class="fa-solid fa-angle-right"></i> Test Prep Guide</a>
+            <a href="Contact.html#faq"><i class="fa-solid fa-angle-right"></i> Patient FAQs</a>
+            <a href="Contact.html"><i class="fa-solid fa-angle-right"></i> Support Helpdesk</a>
+            <a href="404.html"><i class="fa-solid fa-angle-right"></i> Privacy Charter</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Laboratory Hours</h4>
+          <div class="footer-contact-item">
+            <i class="fa-regular fa-clock"></i>
+            <div>
+              <strong>Mon – Fri:</strong> 06:30 AM – 08:00 PM<br>
+              <strong>Saturday:</strong> 07:00 AM – 05:00 PM<br>
+              <strong>Sunday:</strong> 08:00 AM – 01:00 PM (Emergency)
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>MMR Complex, Chinna Thirupathi, near Chinna Muniyappan Kovil, Salem, Tamil Nadu 636008</div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <div><a href="tel:9876543210" style="color:inherit; text-decoration:none;">+91 9876543210</a></div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <div><a href="mailto:info@stackly.com" style="color:inherit; text-decoration:none;">info@stackly.com</a></div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Apex Diagnostics Laboratory. All rights reserved. (Frontend Interactive Demonstration)
+        </div>
+        <div class="footer-bottom-links">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms of Service</a>
+          <a href="404.html">Quality Assurance Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- AOS Animation Library via CDNJS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Specific counters and GSAP entrance for About page
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof gsap !== 'undefined') {
+        gsap.fromTo('.page-hero-title', { y: 25, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: 'power2.out', clearProps: 'all' });
+        gsap.fromTo('.page-hero-subtitle', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, delay: 0.15, ease: 'power2.out', clearProps: 'all' });
+      }
+
+      // Counters
+      const counters = document.querySelectorAll('.stat-number');
+      let started = false;
+      window.addEventListener('scroll', () => {
+        const statsSec = document.querySelector('.stats-section');
+        if (!statsSec) return;
+        if (statsSec.getBoundingClientRect().top <= window.innerHeight * 0.85 && !started) {
+          started = true;
+          counters.forEach(counter => {
+            const target = parseFloat(counter.getAttribute('data-target'));
+            const suffix = counter.getAttribute('data-suffix') || '';
+            let current = 0;
+            const inc = target / 40;
+            const timer = setInterval(() => {
+              current += inc;
+              if (current >= target) {
+                counter.textContent = target.toLocaleString() + suffix;
+                clearInterval(timer);
+              } else {
+                counter.textContent = Math.floor(current).toLocaleString() + suffix;
+              }
+            }, 30);
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
